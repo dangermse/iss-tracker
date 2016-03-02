@@ -10,3 +10,11 @@ uses data from
 http://wheretheiss.at/w/developer
 
 Thanks to Bill Shupp for the api
+
+
+To run py-basemap-iss.py
+you will need to install the following
+
+sudo apt-get install python-matplotlib
+sudo apt-get install python-mpltoolkits.basemap
+sudo apt-get install python-numpy
