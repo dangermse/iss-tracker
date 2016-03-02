@@ -16,5 +16,7 @@ To run py-basemap-iss.py
 you will need to install the following
 
 sudo apt-get install python-matplotlib
+
 sudo apt-get install python-mpltoolkits.basemap
+
 sudo apt-get install python-numpy
