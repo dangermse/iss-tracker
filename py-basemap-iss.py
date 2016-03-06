@@ -13,6 +13,7 @@ def getiss():
     mydata = response.read()
     return mydata
 
+
 while True:
     iss = getiss()
     pos = json.loads(iss)
@@ -35,9 +36,14 @@ while True:
     plt.title('ISS Location For for %s Lat: %.2f Long: %.2f' % (date.strftime("%d %b %Y %H:%M:%S"),lat,lon))
 
     x,y = map(lon, lat)
-    map.plot(x, y, 'bo', markersize=12)
+    map.plot(x, y, 'bo', markersize=12)  # plot the station on the map
     plt.ion()
     plt.draw()
     plt.show(block=False)
-    time.sleep(60) # --only update once per minute - dont be greedy with api
+    try:
+        time.sleep(60) # --only update once per minute - dont be greedy with api
+    except KeyboardInterrupt:
+        plt.close()  # clean up when the command line gets ctrl + c
+        exit()
+
     plt.clf()
